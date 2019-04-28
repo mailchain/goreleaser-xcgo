@@ -2,13 +2,16 @@ dist: trusty
 sudo: required
 services:
   - docker
+env:
+  global:
+    - IMAGE_NAME=mailchain/goreleaser-xcgo
 script:
-  - docker build -t 'mailchain/goreleaser-xcgo:{{ .Tag }}' .
-  - docker build -t 'mailchain/goreleaser-xcgo:latest' .
+  - docker build -t '${IMAGE_NAME}:${TRAVIS_TAG}' .
+  - docker build -t '${IMAGE_NAME}:latest' .
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 deploy:
   - provider: script
-    script: docker push "mailchain/goreleaser-xcgo:latest" && docker push "mailchain/goreleaser-xcgo:{{ .Tag }}"
+    script: docker push "${IMAGE_NAME}:latest" && docker push "${IMAGE_NAME}:${TRAVIS_TAG}"
     on:
       tags: true
