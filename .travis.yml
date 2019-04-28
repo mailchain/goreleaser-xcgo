@@ -6,13 +6,12 @@ env:
   global:
     - IMAGE_NAME=mailchain/goreleaser-xcgo    
 script:
-  - docker build -t "$IMAGE_NAME:{{ .Tag }}"" .
+  - docker build -t "$IMAGE_NAME:{{ .Tag }} .
   - docker build -t "$IMAGE_NAME:latest" .
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push "${IMAGE_NAME}:latest"    
 deploy:
   - provider: script
-    script: docker push "${IMAGE_NAME}:{{ .Tag }}"
+    script: docker push "${IMAGE_NAME}:latest" && docker push "${IMAGE_NAME}:{{ .Tag }}"
     on:
       tags: true
