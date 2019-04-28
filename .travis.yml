@@ -6,6 +6,8 @@ env:
   global:
     - IMAGE_NAME=mailchain/goreleaser-xcgo
 script:
+  - echo '${IMAGE_NAME}:${TRAVIS_TAG}'
+  - echo "${IMAGE_NAME}:${TRAVIS_TAG}"
   - docker build -t '${IMAGE_NAME}:${TRAVIS_TAG}' .
   - docker build -t '${IMAGE_NAME}:latest' .
 after_success:
