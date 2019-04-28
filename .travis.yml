@@ -6,8 +6,8 @@ env:
   global:
     - IMAGE_NAME=mailchain/goreleaser-xcgo    
 script:
-  - docker build -t "$IMAGE_NAME:{{ .Tag }}" .
-  - docker build -t "$IMAGE_NAME:latest" .
+  - docker build -t '$IMAGE_NAME:{{ .Tag }}' .
+  - docker build -t '$IMAGE_NAME:latest' .
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 deploy:
