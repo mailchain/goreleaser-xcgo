@@ -1,2 +1,3 @@
 # goreleaser-xcgo
-Docker container to do cross compilation for mailchain
+
+Docker container to do cross compilation (linux, windows, OSX) of go packages including support for cgo. Created for [Mailchain](https://github.com/mailchain/mailchain) can be used with any go project.

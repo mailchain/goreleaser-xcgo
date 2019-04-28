@@ -1,0 +1,10 @@
+dist: trusty
+sudo: required
+services:
+  - docker
+script:
+  # - docker build -t 'mailchain/goreleaser-xcgo:{{ .Tag }}'
+  - docker build -t 'mailchain/goreleaser-xcgo:latest'
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push
