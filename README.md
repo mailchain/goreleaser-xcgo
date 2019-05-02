@@ -1,6 +1,8 @@
 # goreleaser-xcgo
 
-![Travis](https://travis-ci.com/mailchain/goreleaser-xcgo.svg?branch=master!:https://travis-ci.com/mailchain/goreleaser-xcgo)
+[![Release](https://img.shields.io/github/release/goreleaser/goreleaser.svg?style=for-the-badge)](https://github.com/mailchain/goreleaser-xcgo/releases/latest)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge)](/LICENSE.md)
+[![Travis](https://img.shields.io/travis/com/mailchain/goreleaser-xcgo/master.svg?style=for-the-badge)](https://travis-ci.com/mailchain/goreleaser-xcgo)
 
 Docker container to do cross compilation (linux, windows, OSX) of go packages including support for cgo. Created for [Mailchain](https://github.com/mailchain/mailchain) can be used with any go project.
 
