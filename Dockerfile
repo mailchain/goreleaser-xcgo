@@ -3,6 +3,10 @@ FROM docker.elastic.co/beats-dev/golang-crossbuild:1.13.7-main
 
 LABEL maintainer="robdefeo@gmail.com"
 
+RUN apt-get update -qq && apt-get install -y -q --no-install-recommends \
+    wget \
+ && rm -rf /var/lib/apt/lists/*
+
 ENV GORELEASER_VERSION=0.123.3
 ENV GORELEASER_SHA=cad997014e5c6a462488757087db4145c2ae7d7d73a29cb62bbfd41f18ccea30
 
