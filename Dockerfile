@@ -1,4 +1,5 @@
-FROM dockercore/golang-cross
+FROM docker.elastic.co/beats-dev/golang-crossbuild:1.13.7-main
+# https://github.com/elastic/golang-crossbuild
 
 LABEL maintainer="robdefeo@gmail.com"
 
