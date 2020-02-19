@@ -33,3 +33,4 @@ RUN apt-get update && \
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["-h"]
+COPY scripts/entrypoint.sh /entrypoint.sh
