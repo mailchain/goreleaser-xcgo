@@ -31,4 +31,5 @@ RUN apt-get update && \
 	apt-get install -y docker-ce \
 	docker-ce-cli
 
-CMD ["goreleaser", "-v"]
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["-h"]
