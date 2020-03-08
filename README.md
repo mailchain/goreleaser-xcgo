@@ -7,13 +7,14 @@ Docker container to do cross compilation (linux, windows, OSX) of go packages in
 
 ## Docker
 
-Find it on docker hub https://hub.docker.com/r/mailchain/goreleaser-xcgo or run 
-```
+Find it on docker hub https://hub.docker.com/r/mailchain/goreleaser-xcgo or run
+
+```bash
 docker run --rm --privileged \
   -v $PWD:/go/src/github.com/mailchain/mailchain \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -w /go/src/github.com/mailchain/mailchain \
-  mailchain/goreleaser-xcgo goreleaser --snapshot --rm-dist
+  mailchain/goreleaser-xcgo --snapshot --rm-dist
 ```
 
 ## Travis
